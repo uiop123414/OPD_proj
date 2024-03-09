@@ -67,7 +67,7 @@ public:
 
 public:
 	tstring & GetLevel() { return level;};
-	void SetLevel(tstring & tstr) { level = tstr;};
+    void SetLevel(tstring tstr) { level = tstr;};
 	//   метод сравнивает два обьекта класса Level, в случае тождественности уровня возвращает true, иначе false 
 	bool compare(const Level& l) { if(!level.compare(l.level)) return true; else return false; };
 
@@ -218,14 +218,14 @@ public:
 	// возвращает указатель на дополнительное описание 
 	tstring * getAddOns() { return &addons; };
 	// изменяет текст
-	void SetText(LPCTSTR lpctstr);	
+    void SetText(const tstring  lpctstr);
 //	void SetText(LPCTSTR lpctstr) {	tstring tstr = lpctstr; if(text.compare(tstr)) redefined_text = tstr; };
 	// изменяет пер текст
 //	void SetIRedefinedText(LPCTSTR lpctstr) { redefined_text = lpctstr; };
 	// изменяет описание
-	void SetDescription(LPCTSTR lpctstr) { description = lpctstr; };
+    void SetDescription(const tstring  lpctstr) { description = lpctstr; };
 	// изменяет дополнительное описание
-	void SetAddons(LPCTSTR lpctstr) { addons = lpctstr; };
+    void SetAddons(const tstring lpctstr) { addons = lpctstr; };
 	// возвращает указатель на обозначение
 	tstring * getLabel() {return &label; };
 	// возвращает указатель на обозначение
@@ -479,7 +479,7 @@ public:
 	bool isExclusion(Formula * parent);
 	// множества истинности строятся стандартно, за исключением случая, когда они строятся для операции И и ИЛИ и как минимум один из предикатов в 
 	// этих опреациях - предикат принадлежности. Функция вычисляет уровень и подстроку переменных, которая вставляется в текст обьекта
-	void proccessExclusion(Formula * parent, vector <EntityVariable *> * variables, tstring & tvars, tstring & tlevel, bool produceText = TRUE);
+    void proccessExclusion(Formula * parent, vector <EntityVariable *> * variables, tstring & tvars, tstring & tlevel, bool produceText = true);
 
 };
 

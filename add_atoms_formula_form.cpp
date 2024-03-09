@@ -48,12 +48,28 @@ Add_atoms_formula_form::Add_atoms_formula_form(QWidget *parent) :
     left_label->setText(QCoreApplication::translate("Form", "P (", nullptr));
     right_label->setText(QCoreApplication::translate("Form", ")", nullptr));
 
+    QObject::connect(add_button, SIGNAL(clicked()), this, SLOT(build_formula_fun()));
+
+
     QMetaObject::connectSlotsByName(this);
 
 
 
-
 }
+
+void Add_atoms_formula_form::make_formula(){
+    QString left_number = this->left_number_text_line->toPlainText();
+    QString right_number = this->right_number_text_line->toPlainText();
+    QString right_letter = this->right_letter_text_line->toPlainText();
+    QString left_letter = this->left_letter_text_line->toPlainText();
+
+    this->show();
+}
+
+
+
+
+
 
 Add_atoms_formula_form::~Add_atoms_formula_form()
 {

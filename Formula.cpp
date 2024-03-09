@@ -224,7 +224,7 @@ void Formula::setAtomFormula(const EntityVariable & ev1, const EntityVariable & 
 	freeVariables.push_back(pev1);
 	EntityVariable * pev2 = new EntityVariable(ev2); 
 	freeVariables.push_back(pev2);
-	pev2->SetLevel(tstring(_T("<0>")));
+    pev2->SetLevel(tstring(_T("<0>")));
 //	putTextOfFormula(entities);    // строим текст формулы
 	// строим обозначение для атомарной формулы
 	label = _T(" P<Symbol=/low>0 ( ");    // пишем "P" с нижним индексом "0", у всех атомарных формул такое обозначение, и левую круглую скобку
@@ -2008,7 +2008,7 @@ FormulaSet::FormulaSet(const FormulaSet& si)
 }
 */
 
-void EntityBase::SetText(LPCTSTR lpctstr) 
+void EntityBase::SetText(const tstring lpctstr)
 {	
 	tstring tstr = lpctstr; 
 	trimWhitespaces(&tstr);
@@ -2514,7 +2514,7 @@ bool isTextOfVariable(tstring & text)
 //	vector<TCHAR> allvalues(allValues);
 	tstring perf_text = text;
 	trimWhitespaces(&perf_text);
-	if((perf_text.length() > 0) && (perf_text[0] == TCHAR("(")) && (perf_text[perf_text.length() - 1] == TCHAR(")")) )
+    if((perf_text.length() > 0) && (perf_text[0] == TCHAR('(')) && (perf_text[perf_text.length() - 1] == TCHAR(')')) )
 	{
 		result = false;
 	}

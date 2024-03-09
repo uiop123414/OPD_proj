@@ -34,6 +34,8 @@ private:
     QTextEdit *right_number_text_line;
     QTextEdit *right_letter_text_line;
     QTextEdit *left_letter_text_line;
+public slots:
+    void make_formula();
 };
 
 #endif // ADD_ATOMS_FORMULA_FORM_H
