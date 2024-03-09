@@ -9,10 +9,13 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Formula.cpp \
+    Operation.cpp \
     add_atoms_formula_form.cpp \
     add_fun_form.cpp \
     any_creation_fun_form.cpp \
     build_formula_form.cpp \
+    common_functions.cpp \
     exist_fun_form.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,10 +25,13 @@ SOURCES += \
     swap_form.cpp
 
 HEADERS += \
+    Formula.h \
+    Operation.h \
     add_atoms_formula_form.h \
     add_fun_form.h \
     any_creation_fun_form.h \
     build_formula_form.h \
+    common_functions.h \
     exist_fun_form.h \
     mainwindow.h \
     not_fun_form.h \

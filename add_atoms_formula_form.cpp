@@ -50,6 +50,9 @@ Add_atoms_formula_form::Add_atoms_formula_form(QWidget *parent) :
 
     QMetaObject::connectSlotsByName(this);
 
+
+
+
 }
 
 Add_atoms_formula_form::~Add_atoms_formula_form()

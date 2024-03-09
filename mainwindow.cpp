@@ -1,11 +1,33 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "Formula.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //Вектор для хранения всех сущностей. Для его реализации скопировал все зависимости
+    //за исключением "StdAfx.h" и <afxinet.h>, но без них вроде не ломается
+    vector <EntityBase *> all_entities;
+
+    //Добавление атомарной формулы в список
+    Formula * formula1 = new Formula;
+    EntityVariable ev1(L"x", L"0", VARIABLE);
+    EntityVariable ev2(L"A", L"0", SET);
+    formula1->setAtomFormula(&all_entities, ev1, ev2);
+    //И второй
+    Formula * formula2 = new Formula;
+    EntityVariable ev11(L"x", L"0", VARIABLE);
+    EntityVariable ev22(L"B", L"0", SET);
+    formula2->setAtomFormula(&all_entities, ev11, ev22);
+    //Объединение с помощью & происходит как то так, но first и second берутся не из списка формул,
+    //а из выбранной строки каким то боком, не понимаю как сделать
+//    Formula * formula = joinFormula(all_entities, AND_OPERATION, first, second);
+//    if ( formula != nullptr ){
+//        allEntities->push_back(formula);
+//    }
 
 
     ui_AAF = new Add_atoms_formula_form();
