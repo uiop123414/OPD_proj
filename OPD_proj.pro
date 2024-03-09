@@ -14,10 +14,12 @@ SOURCES += \
     any_creation_fun_form.cpp \
     build_formula_form.cpp \
     exist_fun_form.cpp \
+    furmalas_for_table.cpp \
     main.cpp \
     mainwindow.cpp \
     not_fun_form.cpp \
     or_fun_form.cpp \
+    qtable_formula.cpp \
     show_formula_form.cpp \
     swap_form.cpp
 
@@ -27,9 +29,11 @@ HEADERS += \
     any_creation_fun_form.h \
     build_formula_form.h \
     exist_fun_form.h \
+    furmalas_for_table.h \
     mainwindow.h \
     not_fun_form.h \
     or_fun_form.h \
+    qtable_formula.h \
     show_formula_form.h \
     swap_form.h
 

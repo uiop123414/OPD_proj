@@ -8,6 +8,9 @@
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
+#include <qtable_formula.h>
+#include <furmalas_for_table.h>
+
 namespace Ui {
 class Show_formula_form;
 }

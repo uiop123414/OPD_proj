@@ -30,6 +30,20 @@ Show_formula_form::Show_formula_form(QWidget *parent) :
 
     QMetaObject::connectSlotsByName(this);
 
+    auto values = new QList<furmalas_for_table>;
+
+    values->append(furmalas_for_table(1," Russia", "russia.png"));
+    values->append(furmalas_for_table(11, "Belarus", "belarus.png"));
+    values->append(furmalas_for_table(22, "Slovakia", "slovakia.png"));
+    values->append(furmalas_for_table(33, "Slovenia", "slovenia.png"));
+    values->append(furmalas_for_table(44, "China", "china.png"));
+    values->append(furmalas_for_table(55, "Mongolia","mongolia.png"));
+
+
+    auto model = new QTable_Formula();
+    model->populate(values);
+    this->data_table->setModel(model);
+
 }
 
 Show_formula_form::~Show_formula_form()
