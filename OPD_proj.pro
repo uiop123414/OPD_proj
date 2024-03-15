@@ -44,6 +44,7 @@ FORMS += \
     build_formula_form.ui \
     exist_fun_form.ui \
     mainwindow.ui \
+    mainwindow_redesign.ui \
     not_fun_form.ui \
     or_fun_form.ui \
     show_formula_form.ui \
