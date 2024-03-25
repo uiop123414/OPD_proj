@@ -17,6 +17,7 @@ SOURCES += \
     furmalas_for_table.cpp \
     main.cpp \
     mainwindow.cpp \
+    mainwindow_red.cpp \
     not_fun_form.cpp \
     or_fun_form.cpp \
     qtable_formula.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     exist_fun_form.h \
     furmalas_for_table.h \
     mainwindow.h \
+    mainwindow_red.h \
     not_fun_form.h \
     or_fun_form.h \
     qtable_formula.h \
@@ -44,6 +46,7 @@ FORMS += \
     build_formula_form.ui \
     exist_fun_form.ui \
     mainwindow.ui \
+    mainwindow_red.ui \
     mainwindow_redesign.ui \
     not_fun_form.ui \
     or_fun_form.ui \
