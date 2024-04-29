@@ -119,32 +119,32 @@
       </row>
       <row>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </row>
       <row>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </row>
       <row>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </row>
       <row>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </row>
       <row>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </row>
       <row>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </row>
       <row/>
@@ -162,11 +162,6 @@
       </column>
       <column>
        <property name="text">
-        <string>Новый столбец</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
         <string>Формула</string>
        </property>
       </column>
@@ -178,11 +173,6 @@
       <column>
        <property name="text">
         <string>Описание</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Новый столбец</string>
        </property>
       </column>
       <column>
@@ -298,7 +288,7 @@
      <x>0</x>
      <y>0</y>
      <width>817</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
