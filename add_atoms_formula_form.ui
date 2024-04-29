@@ -7,25 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>298</width>
-    <height>163</height>
+    <height>177</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>P(x,A)=(x∈A)</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Добавить атомарную формулу</string>
      </property>
@@ -63,7 +58,7 @@
        <string>P(          ,           )</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="VarName">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -71,6 +66,11 @@
         <width>41</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="currentIndex">
        <number>23</number>
@@ -206,20 +206,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>47</y>
-        <width>21</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="SetName">
       <property name="geometry">
        <rect>
         <x>140</x>
@@ -227,6 +214,11 @@
         <width>41</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <item>
        <property name="text">
@@ -359,19 +351,48 @@
        </property>
       </item>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QSpinBox" name="VarIndex">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>47</y>
-        <width>21</width>
-        <height>21</height>
+        <x>100</x>
+        <y>50</y>
+        <width>31</width>
+        <height>22</height>
        </rect>
       </property>
-      <property name="text">
-       <string>0</string>
+     </widget>
+     <widget class="QSpinBox" name="SetIndex">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>50</y>
+        <width>31</width>
+        <height>22</height>
+       </rect>
       </property>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>P(x,A)=(x∈A)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="OkBtn">
+     <property name="text">
+      <string>Подтвердить</string>
+     </property>
     </widget>
    </item>
   </layout>

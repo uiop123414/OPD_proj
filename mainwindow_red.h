@@ -2,6 +2,7 @@
 #define MAINWINDOW_RED_H
 
 #include <QMainWindow>
+#include <add_atoms_formula_form.h>
 
 namespace Ui {
 class mainwindow_red;
@@ -17,6 +18,10 @@ public:
 
 private:
     Ui::mainwindow_red *ui;
+    Add_atoms_formula_form *ui_AAF;
+
+public slots:
+    void add_atom();
 };
 
 #endif // MAINWINDOW_RED_H

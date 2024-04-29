@@ -72,7 +72,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="NewAtomicBtn">
          <property name="text">
           <string>Новая атомарная формула</string>
          </property>

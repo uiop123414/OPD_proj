@@ -14,38 +14,10 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="1">
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="text">
-      <string>&lt;</string>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="1">
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="DemoveAll">
      <property name="text">
       <string>&lt;&lt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>&gt;&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="text">
-      <string>&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QCheckBox" name="checkBox">
-     <property name="text">
-      <string>Применить ко всем</string>
      </property>
     </widget>
    </item>
@@ -56,8 +28,53 @@
      </property>
     </widget>
    </item>
+   <item row="0" column="2" rowspan="3">
+    <widget class="QListWidget" name="ChoosenFormulas">
+     <property name="selectionMode">
+      <enum>QAbstractItemView::MultiSelection</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="CheckToAll1">
+     <property name="text">
+      <string>Применить ко всем формулам</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QListWidget" name="listWidget_3">
+     <property name="selectionMode">
+      <enum>QAbstractItemView::MultiSelection</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="MoveAll">
+     <property name="text">
+      <string>&gt;&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="CheckBinary">
+     <property name="text">
+      <string>Бинарная</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="DemoveOne">
+     <property name="text">
+      <string>&lt;</string>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="0" rowspan="2">
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="ExistedFormulas">
      <property name="selectionMode">
       <enum>QAbstractItemView::MultiSelection</enum>
      </property>
@@ -73,34 +90,24 @@
      </item>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QCheckBox" name="checkBox_2">
+   <item row="1" column="1">
+    <widget class="QPushButton" name="MoveOne">
      <property name="text">
-      <string>Применить ко всем формулам</string>
+      <string>&gt;</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QCheckBox" name="checkBox_3">
+   <item row="3" column="2">
+    <widget class="QCheckBox" name="CheckToAll2">
      <property name="text">
-      <string>Бинарная</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
+      <string>Применить ко всем</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="2" rowspan="3">
-    <widget class="QListWidget" name="listWidget_2">
-     <property name="selectionMode">
-      <enum>QAbstractItemView::MultiSelection</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <widget class="QListWidget" name="listWidget_3">
-     <property name="selectionMode">
-      <enum>QAbstractItemView::MultiSelection</enum>
+   <item row="5" column="0" colspan="3">
+    <widget class="QPushButton" name="OkBtn">
+     <property name="text">
+      <string>Подтвердить</string>
      </property>
     </widget>
    </item>
