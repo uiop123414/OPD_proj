@@ -7,6 +7,7 @@ Add_atoms_formula_form::Add_atoms_formula_form(QWidget *parent) :
 {
 
     ui->setupUi(this);
+    QObject::connect(ui->OkBtn, SIGNAL(clicked()), this, SLOT(atom_accept()));
 
     if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("Form"));
@@ -55,4 +56,9 @@ Add_atoms_formula_form::Add_atoms_formula_form(QWidget *parent) :
 Add_atoms_formula_form::~Add_atoms_formula_form()
 {
     delete ui;
+}
+
+void Add_atoms_formula_form::atom_accept()
+{
+    this->close();
 }

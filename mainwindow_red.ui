@@ -79,21 +79,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="NewKonBtn">
          <property name="text">
           <string>Новая ∧ формула</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="NewDizBtn">
          <property name="text">
           <string>Новая ∨ формула</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_8">
+        <widget class="QPushButton" name="NewNotBtn">
          <property name="text">
           <string>Новая ¬ формула</string>
          </property>

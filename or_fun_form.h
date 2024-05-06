@@ -20,6 +20,7 @@ class Or_fun_form : public QWidget
 public:
     explicit Or_fun_form(QWidget *parent = nullptr);
     ~Or_fun_form();
+    void change_type(int new_type);
 
 private:
 
@@ -37,8 +38,13 @@ private:
     QPushButton *perform_Button;
     QPushButton *cancel_Button;
 
+    int type = 0;
+
 
     Ui::Or_fun_form *ui;
+
+public slots:
+    void new_accept();
 };
 
 #endif // OR_FUN_FORM_H
