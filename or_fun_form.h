@@ -8,7 +8,8 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QWidget>
-
+#include <vector>
+#include <formula.h>
 namespace Ui {
 class Or_fun_form;
 }
@@ -20,7 +21,7 @@ class Or_fun_form : public QWidget
 public:
     explicit Or_fun_form(QWidget *parent = nullptr);
     ~Or_fun_form();
-    void change_type(int new_type);
+    void change_type(int new_type,vector <EntityBase *>  _all_entities);
 
 private:
 
@@ -37,6 +38,7 @@ private:
     QRadioButton *perform_to_all_list_radioButton;
     QPushButton *perform_Button;
     QPushButton *cancel_Button;
+    vector <EntityBase *>  all_entities;
 
     int type = 0;
 

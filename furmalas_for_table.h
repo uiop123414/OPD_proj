@@ -2,6 +2,8 @@
 #define FURMALAS_FOR_TABLE_H
 
 #include <QString>
+#include <vector>
+
 
 class furmalas_for_table
 {
@@ -26,7 +28,6 @@ private:
     QString Designation;
     QString addons;
     QString st_text;
-
 };
 
 #endif // FURMALAS_FOR_TABLE_H

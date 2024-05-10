@@ -6,6 +6,9 @@
 #include <add_fun_form.h>
 #include <or_fun_form.h>
 #include <not_fun_form.h>
+#include <vector>
+#include <formula.h>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class mainwindow_red;
@@ -25,12 +28,17 @@ private:
     Or_fun_form *ui_NKF;
     Or_fun_form *ui_NDF;
     Or_fun_form *ui_NNF;
+    vector <EntityBase *> all_entities;
+    QTableWidgetItem* convertWideToUtf8(const wchar_t* wideString);
+    void updateTable();
+
 
 public slots:
     void add_atom();
     void add_kon();
     void add_diz();
     void add_not();
+    void recieveData(EntityVariable ev1, EntityVariable ev2);
 };
 
 #endif // MAINWINDOW_RED_H

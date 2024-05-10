@@ -1,6 +1,7 @@
 #include "or_fun_form.h"
 #include "ui_or_fun_form.h"
 
+#include <QString>
 Or_fun_form::Or_fun_form(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Or_fun_form)
@@ -79,9 +80,18 @@ void Or_fun_form::new_accept()
     this->close();
 }
 
-void Or_fun_form::change_type(int new_type)
+void Or_fun_form::change_type(int new_type,vector <EntityBase *> _all_entities)
 {
     this->type=new_type;
+    this->all_entities = _all_entities;
+    all_entities[0]->getText().data();
+    for(int i=0;i<this->all_entities.size();i++){
+
+        auto res = QString::fromStdWString(all_entities[i]->getText().data()).toStdString().c_str();
+        QListWidgetItem *___qlistwidgetitem = ui->ExistedFormulas->item(i);
+                ___qlistwidgetitem->setText(QCoreApplication::translate("Or_fun_form", res, nullptr));
+    }
+
     switch (this->type){
     case 0:
         this->setWindowTitle(QCoreApplication::translate("Create AND formula", "Create AND formula", nullptr));

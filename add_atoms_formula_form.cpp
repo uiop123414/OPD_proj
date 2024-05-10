@@ -60,5 +60,14 @@ Add_atoms_formula_form::~Add_atoms_formula_form()
 
 void Add_atoms_formula_form::atom_accept()
 {
+
+    tstring label1 = ui->VarName->currentText().toStdWString();
+    tstring label2 =  ui->SetName->currentText().toStdWString();
+
+    EntityVariable ev1(label1, ui->VarIndex->text().toStdWString(), VARIABLE);
+    EntityVariable ev2(label2, ui->SetIndex->text().toStdWString(), SET);
+
+
+    emit sendData(ev1,  ev2);
     this->close();
 }

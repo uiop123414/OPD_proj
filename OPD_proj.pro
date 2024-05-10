@@ -13,12 +13,15 @@ SOURCES += \
     add_fun_form.cpp \
     any_creation_fun_form.cpp \
     build_formula_form.cpp \
+    common_functions.cpp \
     exist_fun_form.cpp \
+    formula.cpp \
     furmalas_for_table.cpp \
     main.cpp \
     mainwindow.cpp \
     mainwindow_red.cpp \
     not_fun_form.cpp \
+    operation.cpp \
     or_fun_form.cpp \
     qtable_formula.cpp \
     show_formula_form.cpp \
@@ -29,11 +32,14 @@ HEADERS += \
     add_fun_form.h \
     any_creation_fun_form.h \
     build_formula_form.h \
+    common_functions.h \
     exist_fun_form.h \
+    formula.h \
     furmalas_for_table.h \
     mainwindow.h \
     mainwindow_red.h \
     not_fun_form.h \
+    operation.h \
     or_fun_form.h \
     qtable_formula.h \
     show_formula_form.h \
