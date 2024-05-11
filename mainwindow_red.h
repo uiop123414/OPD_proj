@@ -30,8 +30,8 @@ private:
     Or_fun_form *ui_NNF;
     vector <EntityBase *> all_entities;
     QTableWidgetItem* convertWideToUtf8(const wchar_t* wideString);
-    void updateTable();
 
+    void updateTable();
 
 public slots:
     void add_atom();
@@ -39,6 +39,7 @@ public slots:
     void add_diz();
     void add_not();
     void recieveData(EntityVariable ev1, EntityVariable ev2);
+    void update_values(Formula * formula);
 };
 
 #endif // MAINWINDOW_RED_H

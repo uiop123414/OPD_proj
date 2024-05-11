@@ -8,8 +8,13 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QWidget>
+//#include <SemanticString.h>
+
 #include <vector>
 #include <formula.h>
+#include <QListWidgetItem>
+
+
 namespace Ui {
 class Or_fun_form;
 }
@@ -38,8 +43,14 @@ private:
     QRadioButton *perform_to_all_list_radioButton;
     QPushButton *perform_Button;
     QPushButton *cancel_Button;
-    vector <EntityBase *>  all_entities;
+    QVariant getItemData(const QListWidgetItem *item);
 
+    vector <EntityBase *>  all_entities;
+    vector <Formula *> * formulas;
+
+    void negativeAllFormulas(vector <EntityBase *> * entities);
+    void joinAllFormulas(vector <EntityBase *> * entities, EntityBaseType type);
+    Formula * joinFormula(vector <EntityBase *> * entities, EntityBaseType type, Formula * first, Formula * second);
     int type = 0;
 
 
@@ -47,6 +58,16 @@ private:
 
 public slots:
     void new_accept();
+    void MoveOne();
+    void DeMoveOne();
+    void MoveAll();
+    void DeMoveAll();
+    void moveAllToThirdList();
+
+signals:
+    void update_values(Formula *);
 };
 
 #endif // OR_FUN_FORM_H
+
+

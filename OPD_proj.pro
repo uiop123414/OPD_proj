@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+#    SemanticString.cpp \
     add_atoms_formula_form.cpp \
     add_fun_form.cpp \
     any_creation_fun_form.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
     swap_form.cpp
 
 HEADERS += \
+#    SemanticString.h \
     add_atoms_formula_form.h \
     add_fun_form.h \
     any_creation_fun_form.h \
@@ -63,3 +65,4 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+

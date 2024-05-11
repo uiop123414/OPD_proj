@@ -21,18 +21,42 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
 
 
     QObject::connect(ui->NewAtomicBtn, SIGNAL(clicked()), this, SLOT(add_atom()));
+
     QObject::connect(ui->NewKonBtn, SIGNAL(clicked()), this, SLOT(add_kon()));
     QObject::connect(ui->NewDizBtn, SIGNAL(clicked()), this, SLOT(add_diz()));
     QObject::connect(ui->NewNotBtn, SIGNAL(clicked()), this, SLOT(add_not()));
+
+    connect(ui_NKF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
+    connect(ui_NDF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
+    connect(ui_NNF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
+
     connect(ui_AAF, SIGNAL(sendData(EntityVariable, EntityVariable)), this, SLOT(recieveData(EntityVariable, EntityVariable)));
 
-    Formula * formula1 = new Formula;
+    Formula * formula1 = new Formula();
     tstring label1 = L"x";
     tstring label2 = L"A";
     EntityVariable ev1(label1, L"0", VARIABLE);
     EntityVariable ev2(label2, L"0", SET);
 
     formula1->setAtomFormula(&all_entities, ev1, ev2);
+
+    formula1 = new Formula();
+    label1 = L"x";
+    label2 = L"B";
+    EntityVariable ev3(label1, L"0", VARIABLE);
+    EntityVariable ev4(label2, L"0", SET);
+
+    formula1->setAtomFormula(&all_entities, ev3, ev4);
+
+    formula1 = new Formula();
+    label1 = L"x";
+    label2 = L"C";
+    EntityVariable ev5(label1, L"0", VARIABLE);
+    EntityVariable ev6(label2, L"0", SET);
+
+    formula1->setAtomFormula(&all_entities, ev5, ev6);
+
+
     updateTable();
 
 }
@@ -45,6 +69,7 @@ QTableWidgetItem*  mainwindow_red::convertWideToUtf8(const wchar_t* wideString) 
 }
 
 void mainwindow_red::updateTable() {
+
     ui->tableWidget->clear();
     for(int i=0;i<all_entities.size();i++){
         // Вставляем строку
@@ -52,7 +77,7 @@ void mainwindow_red::updateTable() {
         /* Устанавливаем в первую колонку id забирая его из результата SQL-запроса
          * Эта колонка будет скрыта
          * */
-        ui->tableWidget->setItem(i,0, new QTableWidgetItem(QString::number(i)));
+        ui->tableWidget->setItem(i,0, new QTableWidgetItem(QString::number(i+1)));
 
         QString res;
         // Устанавливаем чекбокс во вторую колонку
@@ -74,6 +99,7 @@ void mainwindow_red::updateTable() {
 //        ui->tableWidget->setItem(i,3, new QTableWidgetItem(query.value(3).toString()));
 //        ui->tableWidget->setItem(i,4, new QTableWidgetItem(query.value(4).toString()));
     }
+
 }
 
 void mainwindow_red::recieveData(EntityVariable ev1, EntityVariable ev2)
@@ -82,6 +108,15 @@ void mainwindow_red::recieveData(EntityVariable ev1, EntityVariable ev2)
      formula1->setAtomFormula(&all_entities, ev1, ev2);
 
      updateTable();
+}
+
+
+void mainwindow_red::update_values(Formula * formula){
+
+    all_entities.push_back(formula);
+    std::cout<<"Hello"<<std::endl;
+
+    updateTable();
 }
 
 

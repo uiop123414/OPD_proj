@@ -281,7 +281,7 @@ Formula * joinFormula(vector <EntityBase *> * entities, EntityBaseType type, For
         {
             formula = new Formula();
             formula->setType(type);
-            formula->feature = PERFORMED_FEATURE;
+            formula->setFeature(PERFORMED_FEATURE);
 
             Formula * icurr = first;
             Formula * jcurr = second;
@@ -289,35 +289,35 @@ Formula * joinFormula(vector <EntityBase *> * entities, EntityBaseType type, For
             if ( !(icurr->isQuantifier() && jcurr->isQuantifier() ))  //do kv
             {
                 if ( (icurr->getFeature() == FALSE_FEATURE) & (type == AND_OPERATION ) )
-                    formula->feature = FALSE_FEATURE;
+                    formula->setFeature(FALSE_FEATURE);
                 if ( (jcurr->getFeature() == FALSE_FEATURE) & ( type == AND_OPERATION ) )
-                    formula->feature = FALSE_FEATURE;
+                    formula->setFeature(FALSE_FEATURE);
                 if ( (icurr->getFeature() == FALSE_FEATURE) & ( type == OR_OPERATION  ) )
-                    formula->feature = TRUTH_FEATURE;
+                    formula->setFeature(TRUTH_FEATURE);
                 if ( (jcurr->getFeature() == FALSE_FEATURE) & ( type == OR_OPERATION ) )
-                    formula->feature = FALSE_FEATURE;
+                    formula->setFeature(FALSE_FEATURE);
             }
             // ��������� ��������� ���������� �� ������������ ������
-            t = icurr->freeVariables.size();
+            t = icurr->getFreeVariables()->size();
             for (tt = 0; tt < t; tt++)
             {
-                EntityVariable * pev = new EntityVariable(*icurr->freeVariables.at(tt));
-                formula->freeVariables.push_back(pev);
+                EntityVariable * pev = new EntityVariable(*icurr->getFreeVariables()->at(tt));
+                formula->getFreeVariables()->push_back(pev);
             }
-            f = jcurr->freeVariables.size();
+            f = jcurr->getFreeVariables()->size();
             for (tt = 0; tt < f; tt++)
             {
                 check2 = true;
                 for (ff = 0; ff < t; ff++)
                 {
-                    if ( *formula->freeVariables.at(ff) == *jcurr->freeVariables.at(tt) )
+                    if ( *formula->getFreeVariables()->at(ff) == *jcurr->getFreeVariables()->at(tt) )
 //					if ( formula->freeVariables.at(ff)->GetText()->compare(*jcurr->freeVariables.at(tt)->GetText()) == 0 )
                         check2=false;
                 }
                 if (check2==true)
                 {
-                    EntityVariable * pev1 = new EntityVariable(*jcurr->freeVariables.at(tt));
-                    formula->freeVariables.push_back(pev1);
+                    EntityVariable * pev1 = new EntityVariable(*jcurr->getFreeVariables()->at(tt));
+                    formula->getFreeVariables()->push_back(pev1);
                 }
             }
             ParentLink * elem1 = new ParentLink(icurr, nullptr);
@@ -553,6 +553,7 @@ Formula* Formula::negativeFormula(vector <EntityBase *> * entities, int i)
         if (icurr->feature == PERFORMED_FEATURE)
             formula->feature = PERFORMED_FEATURE;
 
+
         // ���� �� ��������� ���������� �������-��������, ��������� �� ��� � ������ ��������� ���������� ����� �������
         for (size_t t = 0; t < icurr->freeVariables.size(); t++)
         {
@@ -593,6 +594,7 @@ Formula* Formula::negativeFormula(vector <EntityBase *> * entities, int i)
         delete formula;
         formula = nullptr;
     }
+
     return formula;
 }
 
@@ -655,8 +657,8 @@ void proccessOneDetail(vector <EntityBase *> * all_entities, tstring * formulaTe
         {
             if(ncurr->getType() != REPLACE_VARIABLE)
                 *formulaText += _T(" ( ");
-            if( ncurr->type == ATOMIC_FORMULA )
-                *formulaText += *(ncurr->freeVariables.at(0)->GetText());
+            if( ncurr->getType() == ATOMIC_FORMULA )
+                *formulaText += *(ncurr->getFreeVariables()->at(0)->GetText());
             else if(ncurr->isBelongingPredicate())
             {
                 *formulaText += ncurr->getText();
@@ -687,7 +689,7 @@ void proccessOneDetail(vector <EntityBase *> * all_entities, tstring * formulaTe
 //			else if ( ncurr->svjazka == TCHAR('2')) *formula += _T(" v ");
 
             if( ncurr->getType() == ATOMIC_FORMULA )
-                *formulaText += *(ncurr->freeVariables.at(1)->GetText());
+                *formulaText += *(ncurr->getFreeVariables()->at(1)->GetText());
             else if(!ncurr->isBelongingPredicate() && !ncurr->isTuple() && !ncurr->isSubset() && (ncurr->getType() != REPLACE_VARIABLE))
 //				proccessOneDetail(all_formulas,formulaText, ncurr->getParentLink(1));
                 proccessOneDetail(all_entities,formulaText, ncurr->getParentLink(1));

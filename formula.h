@@ -291,7 +291,7 @@ private:
     //  метод строит обозначение для подмножества
     void SetSubsetLabel(vector <EntityBase *> * entities);
 
-protected:
+   protected:
     Formula_Feature feature;  // выполнимость, ложность или истинносто формулы
 
 public:
@@ -325,10 +325,10 @@ public:
 
 
     //	метод используется для применения всех возможных операций объединения типа type к списку формул
-    friend void joinAllFormulas(vector <EntityBase *> * entities, EntityBaseType type);
+    void joinAllFormulas(vector <EntityBase *> * entities, EntityBaseType type);
     //	применяет операцию объединения типа type к текущей формуле, если применить операцию возможно, создаёт новую формулу,
     //	вносит её в список формул entities и возвращает указатель на новую формулу, иначе NULL
-    friend Formula * joinFormula(vector <EntityBase *> * entities, EntityBaseType type, Formula * first, Formula * second);
+    Formula * joinFormula(vector <EntityBase *> * entities, EntityBaseType type, Formula * first, Formula * second);
     //  навешивает квантор типа type к текущей формуле по всем свободным переменным поочерёдно
     void quantifierFormula(vector <EntityBase *> * entities, EntityBaseType type);
     //	метод создаёт атомарную формулу из двух строк, предположительно первая строка - переменная, а вторая - множество
@@ -342,9 +342,9 @@ public:
     // создаёт из текущей формулы новую навешиванием квантора, без добавления и проверок в схеме
     Formula* quantifierFormula(EntityBaseType type, EntityVariable * freeVariable);
     //  метод используется для применения операций объединения типа type попарно к формулам из списку entities
-    friend void quantifierAllFormulas(vector <EntityBase *> * entities, EntityBaseType type);
+    void quantifierAllFormulas(vector <EntityBase *> * entities, EntityBaseType type);
     //	применение операции отрицания ко всем формулам из указанного списка.
-    friend void negativeAllFormulas(vector <EntityBase *> * entities);
+    void negativeAllFormulas(vector <EntityBase *> * entities);
     // создание формулы, используя операцию отрицания применительно к текущей формуле c полной проверкой
     Formula*  negativeFormula(vector <EntityBase *> * entities);
     // создание формулы, используя операцию отрицания применительно к текущей формуле с полной проверкой при i равном нулю
