@@ -22,6 +22,7 @@ class Add_atoms_formula_form : public QWidget
 public:
     explicit Add_atoms_formula_form(QWidget *parent = nullptr);
     ~Add_atoms_formula_form();
+    void lang_upd(QTranslator &translator);
 
 private:
     Ui::Add_atoms_formula_form *ui;

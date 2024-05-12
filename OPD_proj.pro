@@ -61,8 +61,15 @@ FORMS += \
     show_formula_form.ui \
     swap_form.ui
 
+TRANSLATIONS+= \
+    translations/mainwindow_En.ts \
+    translations/mainwindow_Ru.ts
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    mainwindow_En.qm
 

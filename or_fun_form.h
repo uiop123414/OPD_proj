@@ -27,6 +27,7 @@ public:
     explicit Or_fun_form(QWidget *parent = nullptr);
     ~Or_fun_form();
     void change_type(int new_type,vector <EntityBase *>  _all_entities);
+    void lang_upd(QTranslator &translator);
 
 private:
 

@@ -71,10 +71,10 @@ Or_fun_form::Or_fun_form(QWidget *parent) :
 
 //    QMetaObject::connectSlotsByName(this);
 
-    QObject::connect(ui->MoveOnebtn, SIGNAL(clicked()), this, SLOT(MoveOne()));
-    QObject::connect(ui->DemoveOnebtn, SIGNAL(clicked()), this, SLOT(DeMoveOne()));
-    QObject::connect(ui->MoveAllbtn, SIGNAL(clicked()), this, SLOT(MoveAll()));
-    QObject::connect(ui->DemoveAllbtn, SIGNAL(clicked()), this, SLOT(DeMoveAll()));
+    QObject::connect(ui->MoveOne, SIGNAL(clicked()), this, SLOT(MoveOne()));
+    QObject::connect(ui->DemoveOne, SIGNAL(clicked()), this, SLOT(DeMoveOne()));
+    QObject::connect(ui->MoveAll, SIGNAL(clicked()), this, SLOT(MoveAll()));
+    QObject::connect(ui->DemoveAll, SIGNAL(clicked()), this, SLOT(DeMoveAll()));
 
     QObject::connect(ui->ChoosenFormulas, &QListWidget::itemSelectionChanged, this, &Or_fun_form::moveAllToThirdList);
 
@@ -387,6 +387,10 @@ void Or_fun_form::change_type(int new_type,vector <EntityBase *> _all_entities)
     }
 }
 
+void Or_fun_form::lang_upd(QTranslator &translator){
+    qApp->installTranslator(&translator);
+    ui->retranslateUi(this);
+}
 
 void Or_fun_form::joinAllFormulas(vector <EntityBase *> * entities, EntityBaseType type)
 {

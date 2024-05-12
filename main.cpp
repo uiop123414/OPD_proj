@@ -1,6 +1,7 @@
 #include "mainwindow_red.h"
 
 #include <QApplication>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {

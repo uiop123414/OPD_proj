@@ -9,6 +9,8 @@
 #include <vector>
 #include <formula.h>
 #include <QTableWidgetItem>
+#include <QTranslator>
+#include <QEvent>
 
 namespace Ui {
 class mainwindow_red;
@@ -21,6 +23,7 @@ class mainwindow_red : public QMainWindow
 public:
     explicit mainwindow_red(QWidget *parent = nullptr);
     ~mainwindow_red();
+    //void changeEvent(QEvent * event);
 
 private:
     Ui::mainwindow_red *ui;
@@ -30,8 +33,12 @@ private:
     Or_fun_form *ui_NNF;
     vector <EntityBase *> all_entities;
     QTableWidgetItem* convertWideToUtf8(const wchar_t* wideString);
+    QTranslator mainTranslator;
 
     void updateTable();
+
+protected:
+    void changeEvent(QEvent * event) override; //Для динамического обновления перевода
 
 public slots:
     void add_atom();

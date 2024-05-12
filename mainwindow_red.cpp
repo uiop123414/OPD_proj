@@ -6,6 +6,9 @@
 #include <codecvt>
 #include <iostream>
 #include <QString>
+#include <QDebug>
+#include <QFile>
+#include <QDir>
 
 mainwindow_red::mainwindow_red(QWidget *parent) :
     QMainWindow(parent),
@@ -25,6 +28,26 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     QObject::connect(ui->NewKonBtn, SIGNAL(clicked()), this, SLOT(add_kon()));
     QObject::connect(ui->NewDizBtn, SIGNAL(clicked()), this, SLOT(add_diz()));
     QObject::connect(ui->NewNotBtn, SIGNAL(clicked()), this, SLOT(add_not()));
+
+    //При смене комбобокса происходит загрузка транслятора из qm файла,
+    //он применяется и вызывает ретранслейт тоже, ретранслейт реально вызывается,
+    //но нихрена не меняет опираясь на транслятор, вопрос какого черта
+    connect(ui->LangChange, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            [=](const QString &str){
+        bool loaded;
+        loaded = mainTranslator.load(QString("mainwindow_") + str + QString(".qm"));
+        qDebug() << loaded;
+        qApp->removeTranslator(&mainTranslator);
+        qApp->installTranslator(&mainTranslator);
+        //ui->retranslateUi(this);
+    });
+    bool loaded;
+//    QString path = QString(QDir::toNativeSeparators(QDir::currentPath() + "/mainwindow_En.qm"));
+    loaded = mainTranslator.load(QString("mainwindow_Ru.qm"));
+//    loaded = QFile::exists(path);
+    qDebug() << loaded;
+    qApp->installTranslator(&mainTranslator);
+    //ui->retranslateUi(this);
 
     connect(ui_NKF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_NDF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
@@ -120,26 +143,42 @@ void mainwindow_red::update_values(Formula * formula){
 }
 
 
+void mainwindow_red::changeEvent(QEvent * event){
+    if (event->type() == QEvent::LanguageChange){
+        ui->retranslateUi(this);
+    } else {
+        QWidget::changeEvent(event);
+    }
+}
+
+
 mainwindow_red::~mainwindow_red()
 {
     delete ui;
 }
 
 void mainwindow_red::add_atom(){
+//    mainTranslator.load(QString("mainwindow_En"), QString("."));
+//    qApp->installTranslator(&mainTranslator);
+//    ui->retranslateUi(this);
+    ui_AAF->lang_upd(this->mainTranslator);
     ui_AAF->show();
 };
 
 void mainwindow_red::add_kon(){
+    ui_NKF->lang_upd(this->mainTranslator);
     ui_NKF->show();
     ui_NKF->change_type(0,all_entities);
 };
 
 void mainwindow_red::add_diz(){
+    ui_NDF->lang_upd(this->mainTranslator);
     ui_NDF->show();
     ui_NDF->change_type(1,all_entities);
 };
 
 void mainwindow_red::add_not(){
+    ui_NNF->lang_upd(this->mainTranslator);
     ui_NNF->show();
     ui_NNF->change_type(2,all_entities);
 };

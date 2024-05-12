@@ -71,3 +71,8 @@ void Add_atoms_formula_form::atom_accept()
     emit sendData(ev1,  ev2);
     this->close();
 }
+
+void Add_atoms_formula_form::lang_upd(QTranslator &translator){
+    qApp->installTranslator(&translator);
+    ui->retranslateUi(this);
+}
