@@ -14,6 +14,13 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="0">
+    <widget class="QPushButton" name="OkBtn">
+     <property name="text">
+      <string>Подтвердить</string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="font">
@@ -23,6 +30,21 @@
      </property>
      <property name="text">
       <string>Добавить атомарную формулу</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>P(x,A)=(x∈A)</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -43,9 +65,9 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>30</x>
         <y>30</y>
-        <width>171</width>
+        <width>241</width>
         <height>31</height>
        </rect>
       </property>
@@ -55,14 +77,14 @@
        </font>
       </property>
       <property name="text">
-       <string>P(          ,           )</string>
+       <string>P(          ,                  )</string>
       </property>
      </widget>
      <widget class="QComboBox" name="VarName">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>37</y>
+        <x>50</x>
+        <y>40</y>
         <width>41</width>
         <height>22</height>
        </rect>
@@ -364,35 +386,13 @@
      <widget class="QSpinBox" name="SetIndex">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>190</x>
         <y>50</y>
         <width>31</width>
         <height>22</height>
        </rect>
       </property>
      </widget>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>P(x,A)=(x∈A)</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QPushButton" name="OkBtn">
-     <property name="text">
-      <string>Подтвердить</string>
-     </property>
     </widget>
    </item>
   </layout>
