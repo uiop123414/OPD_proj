@@ -16,6 +16,11 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //ui->tableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    for(int i=1; i<5; i++){
+        ui->tableWidget->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+//        ui->tableWidget->verticalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+    }
 
     ui_AAF = new Add_atoms_formula_form();
     ui_NKF = new Or_fun_form();
