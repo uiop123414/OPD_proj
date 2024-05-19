@@ -27,12 +27,17 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     ui_NDF = new Or_fun_form();
     ui_NNF = new Or_fun_form();
 
+    ui_ACF = new Or_fun_form();
+    ui_ECF = new Or_fun_form();
+
 
     QObject::connect(ui->NewAtomicBtn, SIGNAL(clicked()), this, SLOT(add_atom()));
 
     QObject::connect(ui->NewKonBtn, SIGNAL(clicked()), this, SLOT(add_kon()));
     QObject::connect(ui->NewDizBtn, SIGNAL(clicked()), this, SLOT(add_diz()));
     QObject::connect(ui->NewNotBtn, SIGNAL(clicked()), this, SLOT(add_not()));
+    QObject::connect(ui->setAnyBtn, SIGNAL(clicked()),this,SLOT(add_any()));
+    QObject::connect(ui->setExistBtn, SIGNAL(clicked()),this,SLOT(add_exist()));
 
     //При смене комбобокса происходит загрузка транслятора из qm файла,
     //он применяется и вызывает ретранслейт тоже, ретранслейт реально вызывается,
@@ -57,6 +62,9 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     connect(ui_NKF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_NDF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_NNF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
+
+    connect(ui_ACF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
+    connect(ui_ECF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
 
     connect(ui_AAF, SIGNAL(sendData(EntityVariable, EntityVariable)), this, SLOT(recieveData(EntityVariable, EntityVariable)));
 
@@ -186,4 +194,16 @@ void mainwindow_red::add_not(){
     ui_NNF->lang_upd(this->mainTranslator);
     ui_NNF->show();
     ui_NNF->change_type(2,all_entities);
+};
+
+void mainwindow_red::add_any(){
+    ui_ACF->lang_upd(this->mainTranslator);
+    ui_ACF->show();
+    ui_ACF->change_type(3,all_entities);
+};
+
+void mainwindow_red::add_exist(){
+    ui_ECF->lang_upd(this->mainTranslator);
+    ui_ECF->show();
+    ui_ECF->change_type(4,all_entities);
 };

@@ -16,61 +16,6 @@ Or_fun_form::Or_fun_form(QWidget *parent) :
 
     QObject::connect(ui->OkBtn, SIGNAL(clicked()), this, SLOT(new_accept()));
 
-//    this->resize(800, 600);
-//    name_label = new QLabel(this);
-//    name_label->setObjectName(QString::fromUtf8("name_label"));
-//    name_label->setGeometry(QRect(20, 20, 181, 18));
-//    left_listView = new QListView(this);
-//    left_listView->setObjectName(QString::fromUtf8("left_listView"));
-//    left_listView->setGeometry(QRect(0, 100, 321, 461));
-//    force_right_Button = new QPushButton(this);
-//    force_right_Button->setObjectName(QString::fromUtf8("force_right_Button"));
-//    force_right_Button->setGeometry(QRect(350, 70, 31, 26));
-//    right_Button = new QPushButton(this);
-//    right_Button->setObjectName(QString::fromUtf8("right_Button"));
-//    right_Button->setGeometry(QRect(350, 100, 31, 26));
-//    left_Button = new QPushButton(this);
-//    left_Button->setObjectName(QString::fromUtf8("left_Button"));
-//    left_Button->setGeometry(QRect(350, 130, 31, 26));
-//    force_left_Button = new QPushButton(this);
-//    force_left_Button->setObjectName(QString::fromUtf8("force_left_Button"));
-//    force_left_Button->setGeometry(QRect(350, 160, 31, 26));
-//    upper_listView = new QListView(this);
-//    upper_listView->setObjectName(QString::fromUtf8("upper_listView"));
-//    upper_listView->setGeometry(QRect(410, 50, 381, 241));
-//    to_all_formulas_radioButton = new QRadioButton(this);
-//    to_all_formulas_radioButton->setObjectName(QString::fromUtf8("to_all_formulas_radioButton"));
-//    to_all_formulas_radioButton->setGeometry(QRect(20, 50, 291, 24));
-//    bin_radioButton = new QRadioButton(this);
-//    bin_radioButton->setObjectName(QString::fromUtf8("bin_radioButton"));
-//    bin_radioButton->setGeometry(QRect(20, 70, 102, 24));
-//    low_listView = new QListView(this);
-//    low_listView->setObjectName(QString::fromUtf8("low_listView"));
-//    low_listView->setGeometry(QRect(410, 320, 381, 241));
-//    perform_to_all_list_radioButton = new QRadioButton(this);
-//    perform_to_all_list_radioButton->setObjectName(QString::fromUtf8("perform_to_all_list_radioButton"));
-//    perform_to_all_list_radioButton->setGeometry(QRect(410, 293, 271, 31));
-//    perform_Button = new QPushButton(this);
-//    perform_Button->setObjectName(QString::fromUtf8("perform_Button"));
-//    perform_Button->setGeometry(QRect(610, 570, 80, 26));
-//    cancel_Button = new QPushButton(this);
-//    cancel_Button->setObjectName(QString::fromUtf8("cancel_Button"));
-//    cancel_Button->setGeometry(QRect(710, 570, 80, 26));
-
-//    this->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
-//    name_label->setText(QCoreApplication::translate("Form", "\320\236\320\277\320\265\321\200\320\260\321\206\320\270\321\217 \320\276\320\261\321\212\320\265\320\264\320\270\320\275\320\265\320\275\320\270\321\217 V", nullptr));
-//    force_right_Button->setText(QCoreApplication::translate("Form", ">>", nullptr));
-//    right_Button->setText(QCoreApplication::translate("Form", ">", nullptr));
-//    left_Button->setText(QCoreApplication::translate("Form", "<", nullptr));
-//    force_left_Button->setText(QCoreApplication::translate("Form", "<<", nullptr));
-//    to_all_formulas_radioButton->setText(QCoreApplication::translate("Form", "\320\237\321\200\320\270\320\274\320\265\320\275\320\270\321\202\321\214 \320\276\320\277\320\265\321\200\320\260\321\206\320\270\321\216 \320\272\320\276 \320\262\321\201\320\265\320\274 \321\204\320\276\321\200\320\274\321\203\320\273\320\260\320\274", nullptr));
-//    bin_radioButton->setText(QCoreApplication::translate("Form", "\320\221\320\270\320\275\320\260\321\200\320\275\320\260\321\217", nullptr));
-//    perform_to_all_list_radioButton->setText(QCoreApplication::translate("Form", "\320\237\321\200\320\270\320\274\320\265\320\275\321\217\321\202\321\214 \320\276\320\277\320\265\321\200\320\260\321\206\320\270\321\216 \320\272\320\276 \320\262\321\201\320\265\320\274\321\203 \321\201\320\277\320\270\321\201\320\272\321\203", nullptr));
-//    perform_Button->setText(QCoreApplication::translate("Form", "\320\222\321\213\320\277\320\276\320\273\320\275\320\270\321\202\321\214", nullptr));
-//    cancel_Button->setText(QCoreApplication::translate("Form", "\320\236\321\202\320\274\320\265\320\275\320\260", nullptr));
-
-//    QMetaObject::connectSlotsByName(this);
-
     QObject::connect(ui->MoveOne, SIGNAL(clicked()), this, SLOT(MoveOne()));
     QObject::connect(ui->DemoveOne, SIGNAL(clicked()), this, SLOT(DeMoveOne()));
     QObject::connect(ui->MoveAll, SIGNAL(clicked()), this, SLOT(MoveAll()));
@@ -80,6 +25,21 @@ Or_fun_form::Or_fun_form(QWidget *parent) :
 
 
 
+
+}
+
+void Or_fun_form::quantifierAllFormulas(vector <EntityBase *> * entities, int type)
+{
+    tstring str;
+    // � ����� ���� �������, ������� � �������� ��������� ����������� �������� �� ���� ��������� ���������� ���������
+    for (size_t i = 0; i <entities->size(); i++)
+    {
+        EntityBase * base = entities->at(i);
+        if ( !base->isFormula() )
+            continue;
+        Formula * icurr = (Formula *)base;
+        icurr->quantifierFormula(entities, (EntityBaseType) type);
+    }
 }
 
 void Or_fun_form::negativeAllFormulas(vector <EntityBase *> * entities){
@@ -107,21 +67,55 @@ void Or_fun_form::moveAllToThirdList() {
 
     QListWidgetItem *selectedItem = ui->ChoosenFormulas->currentItem();
 
-    // Move all items from ChoosenFormulas and ExistedFormulas to listWidget_3 except the selected item
-    int choosenItemCount = ui->ChoosenFormulas->count();
-    for(int i = 0; i < choosenItemCount; ++i) {
-        QListWidgetItem *item = ui->ChoosenFormulas->item(i);
-        if (item != selectedItem) {
-            ui->listWidget_3->addItem(item->clone());
+    if(this->type == 0 or this->type ==  1 or this->type == 2){ // for AND OR NEGATIVE funcs
+        // Move all items from ChoosenFormulas and ExistedFormulas to listWidget_3 except the selected item
+        int choosenItemCount = ui->ChoosenFormulas->count();
+        for(size_t i = 0; i < choosenItemCount; ++i) {
+            QListWidgetItem *item = ui->ChoosenFormulas->item(i);
+            if (item != selectedItem) {
+                ui->listWidget_3->addItem(item->clone());
+            }
+        }
+
+        int existedItemCount = ui->ExistedFormulas->count();
+        for(size_t i = 0; i < existedItemCount; ++i) {
+            QListWidgetItem *item = ui->ExistedFormulas->item(i);
+            if (item != selectedItem) {
+                ui->listWidget_3->addItem(item->clone());
+            }
         }
     }
+    else{
+        std::cout<<"hello"<<std::endl;
+        QString selectedText = selectedItem->text();
 
-    int existedItemCount = ui->ExistedFormulas->count();
-    for(int i = 0; i < existedItemCount; ++i) {
-        QListWidgetItem *item = ui->ExistedFormulas->item(i);
-        if (item != selectedItem) {
-            ui->listWidget_3->addItem(item->clone());
+
+        EntityBase * item;
+
+        for (EntityBase* entity : all_entities) {
+
+                if (entity->getText() == selectedText) {
+
+                    std::cout<< "f->possibleVariables.size()"<<std::endl;
+                    item = entity;
+                    break;
+                }
         }
+
+
+        Formula * f = (Formula *)item;
+        std::cout<< f->possibleVariables.size()<<std::endl;
+        std::cout<< QString::fromStdWString(item->getText()).toStdString().c_str()<<std::endl;
+
+
+        for (size_t i = 0; i < f->possibleVariables.size(); i++){
+
+            auto res = QString::fromStdWString(f->possibleVariables[i]->GetText()->data()).toStdString().c_str();
+            ui->listWidget_3->addItem(QListWidgetItem(res).clone());
+
+
+        }
+
     }
 }
 
@@ -139,7 +133,65 @@ void Or_fun_form::new_accept()
 {
     Formula * formula;
     switch (this->type)
+
     {
+    case QUANTIFIER1_OPERATION:
+    case QUANTIFIER2_OPERATION:
+        if(ui->CheckToAll1->isChecked())
+        {
+            if(formulas->size() > 0)
+                this->quantifierAllFormulas(&all_entities, this->type);
+        }
+        else
+        {
+
+            QListWidgetItem *selectedItem = ui->ChoosenFormulas->currentItem();
+            QString selectedText = selectedItem->text();
+
+
+            EntityBase * item;
+
+            for (EntityBase* entity : all_entities) {
+
+                    if (entity->getText() == selectedText) {
+
+                        item = entity;
+                        break;
+                    }
+            }
+
+
+            Formula * f = (Formula *)item;
+
+
+            QListWidgetItem *selectedItemDown = ui->listWidget_3->currentItem();
+            QString selectedItemTextDown = selectedItemDown->text();
+
+            EntityVariable * pev;
+
+
+            for (EntityVariable* entity :  f->possibleVariables) {
+
+                    if (QString::fromStdWString(entity->GetText()->data()) == selectedItemTextDown) {
+                        std::cout<<"Hello 4"<<std::endl;
+
+                        pev = entity;
+                        break;
+                    }
+            }
+
+
+            std::cout<<"Hello 5"<<std::endl;
+            if(pev!=nullptr){
+
+                std::cout<<"Hello 6"<<std::endl;
+                formula=f->quantifierFormula(&all_entities, (EntityBaseType) this->type, pev);
+            }
+
+            break;
+
+        }
+
     case 2:
         if(ui->CheckToAll1->isChecked())
         {
@@ -179,68 +231,9 @@ void Or_fun_form::new_accept()
                 formula = f->negativeFormula(&all_entities);
 
 
-                //all_entities[i]->getText().data()
-//                if(selectedItem)
-//                {
-//                    SemanticString * dsi = (SemanticString *) m_ListBoxDestination1.DCU.at(selected);
-//                    Formula * f = (Formula *)dsi->formula;
-//                    if(f)
-//                    {
-//                        Formula * formula = f->negativeFormula(allEntities);
-//                        if (!formula) {
-//                            if (CURRENT_LANG_OF == "rus") {
-//                                MessageBox(_T("Формула с такими же переменными уже существует и не может быть создана"), _T("Предупреждение"), MB_OK);
-//                            }
-//                            else {
-//                                MessageBox(_T("A formula with the same variables already exists and cannot be created"), _T("Warning"), MB_OK);
-
-//                            }
-//                        }
-//                    }
-//                }
-
-
             }
         }
         break;
-//    case QUANTIFIER1_OPERATION:
-//    case QUANTIFIER2_OPERATION:
-//        if(m_CheckApplyForAll.GetCheck())
-//        {
-//            if(formulas->size() > 0)
-//                quantifierAllFormulas(allEntities, operation);
-//        }
-//        else
-//        {
-//            int selected = m_ListBoxDestination1.GetCurSel();
-//            if(selected >= 0)
-//            {
-//                SemanticString * dsi = (SemanticString *) m_ListBoxDestination1.DCU.at(selected);
-//                Formula * f = (Formula *)dsi->formula;
-//                if(f)
-//                {
-//                    if ( m_checkAll2.GetCheck() )
-//                    {
-//                        for ( size_t i = 0; i < f->possibleVariables.size(); i++)
-//                        {
-//                            EntityVariable * pev = f->possibleVariables.at(i);
-//                            f->quantifierFormula(allEntities, operation, pev);
-//                        }
-//                    }
-//                    else
-//                    {
-//                        int selected1 = m_ListBoxDestination2.GetCurSel();
-//                        if(selected1 >= 0)
-//                        {
-//                            EntityVariable * pev = f->possibleVariables.at(selected1);
-//                            f->quantifierFormula(allEntities, operation, pev);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        HideFreeVariables();
-//    break;
 
     case 1:
     case 0:
@@ -293,12 +286,9 @@ void Or_fun_form::new_accept()
 
 
                 Formula * s = (Formula *)itemEx;
-                std::cout<<"Before Emit 3\n";
-                // При дебагинге не правильно работает s(itemEx) и также не добавляются новые entities
+
                 formula = joinFormula(&all_entities, operation, f, s);
                 std::cout<<"Before Emit 2\n";
-//                if ( formula != nullptr )
-//                    all_entities.push_back(formula);
 
 
 
@@ -308,7 +298,7 @@ void Or_fun_form::new_accept()
     default:
         break;
     }
-    std::cout<<"Before Emit\n";
+
     emit update_values(formula);
     this->close();
 }
@@ -369,6 +359,12 @@ void Or_fun_form::change_type(int new_type,vector <EntityBase *> _all_entities)
 
          ___qlistwidgetitem->setText(QCoreApplication::translate("Or_fun_form", res, nullptr));
 
+        EntityBase * base = all_entities.at(i);
+        if ( base->getType() == FORMULA_SET )
+                 continue;
+        Formula * icurr = (Formula *)base;
+
+        icurr = icurr->operationCandidate(&all_entities,(EntityBaseType) type);
     }
 
     switch (this->type){
@@ -381,8 +377,14 @@ void Or_fun_form::change_type(int new_type,vector <EntityBase *> _all_entities)
     case 2:// NOT
         this->setWindowTitle(QCoreApplication::translate("Create NOT formula", "Create NOT formula", nullptr));
         break;
+    case 3:// Any
+        this->setWindowTitle(QCoreApplication::translate("Set Any formula", "Set Any formula", nullptr));
+        break;
+    case 4:// Exsits
+        this->setWindowTitle(QCoreApplication::translate("Set Exist formula", "Set Exist formula", nullptr));
+        break;
     default:
-        this->setWindowTitle(QString("ne robit!!"));
+        this->setWindowTitle(QString("doesn't working"));
         break;
     }
 }

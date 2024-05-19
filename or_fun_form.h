@@ -50,6 +50,7 @@ private:
     vector <Formula *> * formulas;
 
     void negativeAllFormulas(vector <EntityBase *> * entities);
+    void quantifierAllFormulas(vector <EntityBase *> * entities, int type);
     void joinAllFormulas(vector <EntityBase *> * entities, EntityBaseType type);
     Formula * joinFormula(vector <EntityBase *> * entities, EntityBaseType type, Formula * first, Formula * second);
     int type = 0;

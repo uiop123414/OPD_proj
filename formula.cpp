@@ -142,6 +142,7 @@ void Formula::unsetFreeVariables(vector <EntityVariable *> * unset)
     // ���� �� ��������� ���������� �������, ��������� �� ��� � ��������� ���������
     for ( size_t i = 0; i < freeVariables.size(); i++)
     {
+
         EntityVariable * pev = new EntityVariable(*(freeVariables.at(i)));
         possibleVariables.push_back(pev);    // ��������� ��������� ���������� ���������� ��������� ��������� ����������
     }

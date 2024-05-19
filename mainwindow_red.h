@@ -6,6 +6,8 @@
 #include <add_fun_form.h>
 #include <or_fun_form.h>
 #include <not_fun_form.h>
+#include <any_creation_fun_form.h>
+
 #include <vector>
 #include <formula.h>
 #include <QTableWidgetItem>
@@ -31,6 +33,10 @@ private:
     Or_fun_form *ui_NKF;
     Or_fun_form *ui_NDF;
     Or_fun_form *ui_NNF;
+
+    Or_fun_form * ui_ACF;
+    Or_fun_form * ui_ECF;
+
     vector <EntityBase *> all_entities;
     QTableWidgetItem* convertWideToUtf8(const wchar_t* wideString);
     QTranslator mainTranslator;
@@ -45,6 +51,8 @@ public slots:
     void add_kon();
     void add_diz();
     void add_not();
+    void add_any();
+    void add_exist();
     void recieveData(EntityVariable ev1, EntityVariable ev2);
     void update_values(Formula * formula);
 };
