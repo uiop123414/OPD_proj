@@ -142,27 +142,27 @@
       <row/>
       <column>
        <property name="text">
-        <string>№</string>
+        <string notr="true">№</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Формула</string>
+        <string notr="true">Формула</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Тип</string>
+        <string notr="true">Тип</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Описание</string>
+        <string notr="true">Описание</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Изначальный текст</string>
+        <string notr="true">Изначальный текст</string>
        </property>
       </column>
      </widget>

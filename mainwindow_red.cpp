@@ -17,10 +17,10 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     ui->setupUi(this);
 
     //ui->tableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-    for(int i=1; i<5; i++){
-        ui->tableWidget->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+//    for(int i=1; i<5; i++){
+//        ui->tableWidget->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
 //        ui->tableWidget->verticalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
-    }
+//    }
 
     ui_AAF = new Add_atoms_formula_form();
     ui_NKF = new Or_fun_form();
@@ -53,7 +53,7 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     });
     bool loaded;
 //    QString path = QString(QDir::toNativeSeparators(QDir::currentPath() + "/mainwindow_En.qm"));
-    loaded = mainTranslator.load(QString(":/lang/translations/mainwindow_En.qm"));
+    loaded = mainTranslator.load(QString(":/lang/translations/mainwindow_Ru.qm"));
     loaded = QFile::exists(":/lang/translations/mainwindow_En.qm");
     qDebug() << loaded;
     qApp->installTranslator(&mainTranslator);
