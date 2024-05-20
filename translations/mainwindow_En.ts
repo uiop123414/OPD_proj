@@ -9,283 +9,283 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="25"/>
+        <location filename="../add_atoms_formula_form.ui" line="32"/>
         <source>Добавить атомарную формулу</source>
         <translation>Add atomic formula</translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="41"/>
+        <location filename="../add_atoms_formula_form.ui" line="63"/>
         <source>Ввод:</source>
         <translation>Input:</translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="58"/>
-        <source>P(          ,           )</source>
+        <location filename="../add_atoms_formula_form.ui" line="80"/>
+        <source>P(          ,                  )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="80"/>
+        <location filename="../add_atoms_formula_form.ui" line="102"/>
         <source>a</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="85"/>
+        <location filename="../add_atoms_formula_form.ui" line="107"/>
         <source>b</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="90"/>
+        <location filename="../add_atoms_formula_form.ui" line="112"/>
         <source>c</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="95"/>
+        <location filename="../add_atoms_formula_form.ui" line="117"/>
         <source>d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="100"/>
+        <location filename="../add_atoms_formula_form.ui" line="122"/>
         <source>e</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="105"/>
+        <location filename="../add_atoms_formula_form.ui" line="127"/>
         <source>f</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="110"/>
+        <location filename="../add_atoms_formula_form.ui" line="132"/>
         <source>g</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="115"/>
+        <location filename="../add_atoms_formula_form.ui" line="137"/>
         <source>h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="120"/>
+        <location filename="../add_atoms_formula_form.ui" line="142"/>
         <source>i</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="125"/>
+        <location filename="../add_atoms_formula_form.ui" line="147"/>
         <source>j</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="130"/>
+        <location filename="../add_atoms_formula_form.ui" line="152"/>
         <source>k</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="135"/>
+        <location filename="../add_atoms_formula_form.ui" line="157"/>
         <source>l</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="140"/>
+        <location filename="../add_atoms_formula_form.ui" line="162"/>
         <source>m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="145"/>
+        <location filename="../add_atoms_formula_form.ui" line="167"/>
         <source>n</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="150"/>
+        <location filename="../add_atoms_formula_form.ui" line="172"/>
         <source>o</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="155"/>
+        <location filename="../add_atoms_formula_form.ui" line="177"/>
         <source>p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="160"/>
+        <location filename="../add_atoms_formula_form.ui" line="182"/>
         <source>q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="165"/>
+        <location filename="../add_atoms_formula_form.ui" line="187"/>
         <source>r</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="170"/>
+        <location filename="../add_atoms_formula_form.ui" line="192"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="175"/>
+        <location filename="../add_atoms_formula_form.ui" line="197"/>
         <source>t</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="180"/>
+        <location filename="../add_atoms_formula_form.ui" line="202"/>
         <source>u</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="185"/>
+        <location filename="../add_atoms_formula_form.ui" line="207"/>
         <source>v</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="190"/>
+        <location filename="../add_atoms_formula_form.ui" line="212"/>
         <source>w</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="195"/>
+        <location filename="../add_atoms_formula_form.ui" line="217"/>
         <source>x</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="200"/>
+        <location filename="../add_atoms_formula_form.ui" line="222"/>
         <source>y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="205"/>
+        <location filename="../add_atoms_formula_form.ui" line="227"/>
         <source>z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="225"/>
+        <location filename="../add_atoms_formula_form.ui" line="247"/>
         <source>A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="230"/>
+        <location filename="../add_atoms_formula_form.ui" line="252"/>
         <source>B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="235"/>
+        <location filename="../add_atoms_formula_form.ui" line="257"/>
         <source>C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="240"/>
+        <location filename="../add_atoms_formula_form.ui" line="262"/>
         <source>D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="245"/>
+        <location filename="../add_atoms_formula_form.ui" line="267"/>
         <source>E</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="250"/>
+        <location filename="../add_atoms_formula_form.ui" line="272"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="255"/>
-        <location filename="../add_atoms_formula_form.ui" line="270"/>
+        <location filename="../add_atoms_formula_form.ui" line="277"/>
+        <location filename="../add_atoms_formula_form.ui" line="292"/>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="260"/>
+        <location filename="../add_atoms_formula_form.ui" line="282"/>
         <source>H</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="265"/>
+        <location filename="../add_atoms_formula_form.ui" line="287"/>
         <source>I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="275"/>
+        <location filename="../add_atoms_formula_form.ui" line="297"/>
         <source>K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="280"/>
+        <location filename="../add_atoms_formula_form.ui" line="302"/>
         <source>L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="285"/>
+        <location filename="../add_atoms_formula_form.ui" line="307"/>
         <source>M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="290"/>
+        <location filename="../add_atoms_formula_form.ui" line="312"/>
         <source>N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="295"/>
+        <location filename="../add_atoms_formula_form.ui" line="317"/>
         <source>O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="300"/>
+        <location filename="../add_atoms_formula_form.ui" line="322"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="305"/>
+        <location filename="../add_atoms_formula_form.ui" line="327"/>
         <source>Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="310"/>
+        <location filename="../add_atoms_formula_form.ui" line="332"/>
         <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="315"/>
+        <location filename="../add_atoms_formula_form.ui" line="337"/>
         <source>S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="320"/>
+        <location filename="../add_atoms_formula_form.ui" line="342"/>
         <source>T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="325"/>
+        <location filename="../add_atoms_formula_form.ui" line="347"/>
         <source>U</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="330"/>
+        <location filename="../add_atoms_formula_form.ui" line="352"/>
         <source>V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="335"/>
+        <location filename="../add_atoms_formula_form.ui" line="357"/>
         <source>W</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="340"/>
+        <location filename="../add_atoms_formula_form.ui" line="362"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="345"/>
+        <location filename="../add_atoms_formula_form.ui" line="367"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="350"/>
+        <location filename="../add_atoms_formula_form.ui" line="372"/>
         <source>Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="384"/>
+        <location filename="../add_atoms_formula_form.ui" line="47"/>
         <source>P(x,A)=(x∈A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../add_atoms_formula_form.ui" line="394"/>
+        <location filename="../add_atoms_formula_form.ui" line="20"/>
         <source>Подтвердить</source>
         <translation>Accept</translation>
     </message>
@@ -317,7 +317,7 @@
 <context>
     <name>Create AND formula</name>
     <message>
-        <location filename="../or_fun_form.cpp" line="376"/>
+        <location filename="../or_fun_form.cpp" line="372"/>
         <source>Create AND formula</source>
         <translation type="unfinished"></translation>
     </message>
@@ -325,7 +325,7 @@
 <context>
     <name>Create NOT formula</name>
     <message>
-        <location filename="../or_fun_form.cpp" line="382"/>
+        <location filename="../or_fun_form.cpp" line="378"/>
         <source>Create NOT formula</source>
         <translation type="unfinished"></translation>
     </message>
@@ -725,6 +725,22 @@
     </message>
 </context>
 <context>
+    <name>Set Any formula</name>
+    <message>
+        <location filename="../or_fun_form.cpp" line="381"/>
+        <source>Set Any formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Set Exist formula</name>
+    <message>
+        <location filename="../or_fun_form.cpp" line="384"/>
+        <source>Set Exist formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Show_formula_form</name>
     <message>
         <location filename="../show_formula_form.ui" line="16"/>
@@ -864,15 +880,47 @@
     </message>
     <message>
         <location filename="../mainwindow_red.ui" line="202"/>
+        <source>⊂</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="209"/>
+        <source>⊆</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="216"/>
+        <source>∀</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="223"/>
+        <source>∨</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="230"/>
+        <source>∧</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="237"/>
+        <source>∃</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="244"/>
+        <source>∈</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="251"/>
+        <source>^n</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow_red.ui" line="258"/>
-        <source>PushButton</source>
+        <source>n_</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

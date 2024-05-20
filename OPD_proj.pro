@@ -74,3 +74,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     mainwindow_En.qm
 
+RESOURCES += \
+    resources.qrc
+

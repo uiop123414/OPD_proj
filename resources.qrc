@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/lang">
+        <file>translations/mainwindow_En.qm</file>
+        <file>translations/mainwindow_Ru.qm</file>
+        <file>translations/mainwindow_En.ts</file>
+        <file>translations/mainwindow_Ru.ts</file>
+    </qresource>
+</RCC>

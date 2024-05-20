@@ -45,7 +45,7 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     connect(ui->LangChange, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
             [=](const QString &str){
         bool loaded;
-        loaded = mainTranslator.load(QString("mainwindow_") + str + QString(".qm"));
+        loaded = mainTranslator.load(QString(":/lang/translations/mainwindow_") + str + QString(".qm"));
         qDebug() << loaded;
         qApp->removeTranslator(&mainTranslator);
         qApp->installTranslator(&mainTranslator);
@@ -53,11 +53,11 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     });
     bool loaded;
 //    QString path = QString(QDir::toNativeSeparators(QDir::currentPath() + "/mainwindow_En.qm"));
-    loaded = mainTranslator.load(QString("mainwindow_Ru.qm"));
-//    loaded = QFile::exists(path);
+    loaded = mainTranslator.load(QString(":/lang/translations/mainwindow_En.qm"));
+    loaded = QFile::exists(":/lang/translations/mainwindow_En.qm");
     qDebug() << loaded;
     qApp->installTranslator(&mainTranslator);
-    //ui->retranslateUi(this);
+    ui->retranslateUi(this);
 
     connect(ui_NKF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_NDF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
