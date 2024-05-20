@@ -34,14 +34,13 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     QObject::connect(ui->NewAtomicBtn, SIGNAL(clicked()), this, SLOT(add_atom()));
 
     QObject::connect(ui->NewKonBtn, SIGNAL(clicked()), this, SLOT(add_kon()));
-    QObject::connect(ui->NewDizBtn, SIGNAL(clicked()), this, SLOT(add_diz()));
+    QObject::connect(ui->NewDizBtn, SIGNAL(clicked()), this, SLOT(add_diz()));  //Открытие новых окон по нажатию кнопки
     QObject::connect(ui->NewNotBtn, SIGNAL(clicked()), this, SLOT(add_not()));
     QObject::connect(ui->setAnyBtn, SIGNAL(clicked()),this,SLOT(add_any()));
     QObject::connect(ui->setExistBtn, SIGNAL(clicked()),this,SLOT(add_exist()));
 
     //При смене комбобокса происходит загрузка транслятора из qm файла,
-    //он применяется и вызывает ретранслейт тоже, ретранслейт реально вызывается,
-    //но нихрена не меняет опираясь на транслятор, вопрос какого черта
+    //он применяется и вызывает ретранслейт
     connect(ui->LangChange, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
             [=](const QString &str){
         bool loaded;
@@ -51,6 +50,7 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
         qApp->installTranslator(&mainTranslator);
         //ui->retranslateUi(this);
     });
+    //Загрузка языка по умолчанию при запуске приложения
     bool loaded;
 //    QString path = QString(QDir::toNativeSeparators(QDir::currentPath() + "/mainwindow_En.qm"));
     loaded = mainTranslator.load(QString(":/lang/translations/mainwindow_Ru.qm"));
@@ -59,15 +59,16 @@ mainwindow_red::mainwindow_red(QWidget *parent) :
     qApp->installTranslator(&mainTranslator);
     ui->retranslateUi(this);
 
+    //Обновление таблицы при сигнале от второстепенных окон
     connect(ui_NKF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_NDF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_NNF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
-
     connect(ui_ACF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
     connect(ui_ECF, SIGNAL(update_values(Formula *)), this, SLOT(update_values(Formula *)));
 
     connect(ui_AAF, SIGNAL(sendData(EntityVariable, EntityVariable)), this, SLOT(recieveData(EntityVariable, EntityVariable)));
 
+    //Добаление тестовых атомарных формул
     Formula * formula1 = new Formula();
     tstring label1 = L"x";
     tstring label2 = L"A";
